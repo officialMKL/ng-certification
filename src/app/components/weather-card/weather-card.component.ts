@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {IWeatherData} from '../../model/i-weather-data';
-import {WeatherHttpService} from '../../services/weather-http.service';
+import {IWeatherData} from '@app/model/i-weather-data';
+import {WeatherHttpService} from '@app/services/weather-http.service';
 import {Subscription} from 'rxjs';
-import {WeatherIconService} from '../../services/weather-icon.service';
+import {HttpErrorResponse} from '@angular/common/http';
 
 @Component({
   selector: 'app-weather-card',
@@ -24,6 +24,8 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.subscription = this.weatherHttpService.getWeatherData(this.zipcode, 'US').subscribe(weatherData => {
       this.weatherData = weatherData;
+    }, (error: HttpErrorResponse) => {
+      this.removeLocationChange.emit(this.zipcode);
     });
   }
 

@@ -2,6 +2,14 @@
   "name": "angular",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
   "dependencies": {
     "@angular/animations": "11.2.6",
     "@angular/common": "^11.2.6",
@@ -13,18 +21,11 @@
     "@angular/router": "^11.2.6",
     "bootstrap": "^3.4.1",
     "core-js": "^3.6.5",
+    "ngx-logger": "^4.2.1",
     "popper.js": "^1.16.0",
     "rxjs": "^6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
-  },
-  "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1102.5",

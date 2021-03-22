@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import {LocationStoreService} from '../../services/location-store.service';
+import {Component, OnInit} from '@angular/core';
+import {LocationStoreService} from '@app/services/location-store.service';
 
 @Component({
   selector: 'app-weather-homepage',

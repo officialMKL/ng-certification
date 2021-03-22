@@ -5,9 +5,8 @@
 
     </div>
     <ul class="list-group">
-      <!---->
       <li class="list-group-item" *ngFor="let forecastItem of forecast.list">
-        {{forecastItem.dt * 1000 | date : 'E, MMM d, y'}}:
+        {{forecastItem.dt | castToMiliseconds | date : 'E, MMM d, y'}}:
         {{forecastItem.weather[0].main}}
         - Min: {{forecastItem.temp.min}}&deg;
         - Max: {{forecastItem.temp.max}}&deg;

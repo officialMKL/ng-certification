@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {WeatherHttpService} from '../../services/weather-http.service';
+import {WeatherHttpService} from '@app/services/weather-http.service';
 import {ActivatedRoute} from '@angular/router';
-import {IForecastData} from '../../model/i-weather-data';
+import {IForecastData} from '@app/model/i-weather-data';
 import {Subscription} from 'rxjs';
 
 @Component({
@@ -19,7 +19,7 @@ export class WeatherForecastComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.routeSubscription = this.route.params.subscribe(params => {
-      this.forecastSubscription = this.weatherHttpService.getWeatherForecast(params?.zipcode, 'US').subscribe(forecast => {
+      this.forecastSubscription = this.weatherHttpService.getWeatherForecast(params?.zipcode, 'US', '5').subscribe(forecast => {
         this.forecast = forecast;
       });
     });
