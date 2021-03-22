@@ -1,0 +1,19 @@
+<div class="well flex" *ngIf="weatherData">
+  <div>
+    <h3>{{weatherData.name}} ({{zipcode}})</h3>
+    <h4>Current conditions: {{weatherData.weather[0].main}}</h4>
+    <h4>Temperatures today:</h4>
+    <p>
+      Current {{weatherData.main.temp}}&deg;
+      - Max {{weatherData.main.temp_max}}&deg;
+      - Min {{weatherData.main.temp_min}}&deg;
+    </p>
+    <p>
+      <a [routerLink]="['forecast', zipcode]">Show 5-day forecast for {{weatherData.name}}</a>
+    </p>
+  </div>
+  <div>
+    <span class="close" (click)="handleRemoveLocation()">×</span>
+    <img [src]="iconUrl">
+  </div>
+</div>

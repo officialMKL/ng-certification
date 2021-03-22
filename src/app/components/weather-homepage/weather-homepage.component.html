@@ -1,1 +1,4 @@
-<app-enter-zipcode (addZipcodeChange)="handleNewZipcode($event)"></app-enter-zipcode>
+<div class="container-fluid">
+  <app-enter-zipcode (addZipcodeChange)="handleNewZipcode($event)"></app-enter-zipcode>
+  <app-weather-card *ngFor="let location of locations" [zipcode]="location" (removeLocationChange)="handleRemoveLocation($event)"></app-weather-card>
+</div>

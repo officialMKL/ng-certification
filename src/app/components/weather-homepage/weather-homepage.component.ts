@@ -17,6 +17,10 @@ export class WeatherHomepageComponent implements OnInit {
     this.locationStoreService.add(zipcode);
   }
 
+  handleRemoveLocation(zipcode: string): void {
+    this.locationStoreService.remove(zipcode);
+  }
+
   get locations(): string[] {
     return this.locationStoreService.locations;
   }

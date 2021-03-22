@@ -21,6 +21,11 @@ export class LocationStoreService {
     }
   }
 
+  remove(zipcode: string): void {
+    this._locations = this._locations.filter(location => location !== zipcode);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(this._locations));
+  }
+
   get locations(): string[] {
     return this._locations;
   }

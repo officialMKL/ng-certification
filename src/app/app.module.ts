@@ -7,10 +7,12 @@ import { HelloComponent } from './hello.component';
 import { EnterZipcodeComponent } from './components/enter-zipcode/enter-zipcode.component';
 import { WeatherHomepageComponent } from './components/weather-homepage/weather-homepage.component';
 import {AppRoutingModule} from './app-routing.module';
+import { WeatherCardComponent } from './components/weather-card/weather-card.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
-  imports:      [ BrowserModule, ReactiveFormsModule, AppRoutingModule ],
-  declarations: [ AppComponent, HelloComponent, EnterZipcodeComponent, WeatherHomepageComponent ],
+  imports:      [ BrowserModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule ],
+  declarations: [ AppComponent, HelloComponent, EnterZipcodeComponent, WeatherHomepageComponent, WeatherCardComponent ],
   bootstrap:    [ AppComponent ]
 })
 export class AppModule { }
