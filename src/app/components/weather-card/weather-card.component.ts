@@ -1,8 +1,8 @@
 import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
-import {WeatherData} from '../../model/weather-data';
+import {IWeatherData} from '../../model/i-weather-data';
 import {WeatherHttpService} from '../../services/weather-http.service';
 import {Subscription} from 'rxjs';
-import {WeatherIconService} from "../../services/weather-icon.service";
+import {WeatherIconService} from '../../services/weather-icon.service';
 
 @Component({
   selector: 'app-weather-card',
@@ -16,10 +16,10 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
   @Output()
   removeLocationChange: EventEmitter<string> = new EventEmitter<string>();
 
-  weatherData: WeatherData;
+  weatherData: IWeatherData;
   private subscription: Subscription;
 
-  constructor(private weatherHttpService: WeatherHttpService, private weatherIconService: WeatherIconService) { }
+  constructor(private weatherHttpService: WeatherHttpService) { }
 
   ngOnInit(): void {
     this.subscription = this.weatherHttpService.getWeatherData(this.zipcode, 'US').subscribe(weatherData => {
@@ -33,10 +33,6 @@ export class WeatherCardComponent implements OnInit, OnDestroy {
 
   handleRemoveLocation(): void {
     this.removeLocationChange.emit(this.zipcode);
-  }
-
-  get iconUrl(): string {
-    return this.weatherIconService.getIconUrl(this.weatherData.weather[0].icon);
   }
 
 }

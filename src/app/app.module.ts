@@ -9,10 +9,23 @@ import { WeatherHomepageComponent } from './components/weather-homepage/weather-
 import {AppRoutingModule} from './app-routing.module';
 import { WeatherCardComponent } from './components/weather-card/weather-card.component';
 import {HttpClientModule} from '@angular/common/http';
+import { WeatherForecastComponent } from './components/weather-forecast/weather-forecast.component';
 
 @NgModule({
-  imports:      [ BrowserModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule ],
-  declarations: [ AppComponent, HelloComponent, EnterZipcodeComponent, WeatherHomepageComponent, WeatherCardComponent ],
-  bootstrap:    [ AppComponent ]
+  imports: [
+    BrowserModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  declarations: [
+    AppComponent,
+    HelloComponent,
+    EnterZipcodeComponent,
+    WeatherHomepageComponent,
+    WeatherCardComponent,
+    WeatherForecastComponent
+  ],
+  bootstrap: [ AppComponent ]
 })
 export class AppModule { }

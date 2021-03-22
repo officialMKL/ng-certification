@@ -14,6 +14,6 @@
   </div>
   <div>
     <span class="close" (click)="handleRemoveLocation()">×</span>
-    <img [src]="iconUrl">
+    <img [src]="weatherData.iconUrl" [alt]="weatherData.weather[0].description">
   </div>
 </div>
