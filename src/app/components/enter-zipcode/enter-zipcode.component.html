@@ -1,0 +1,8 @@
+<div class="well">
+  <form>
+    <h2>Enter a zipcode:</h2>
+    <input class="form-control" [formControl]="zipcode" placeholder="Zipcode" type="text" id="addLocation">
+    <br>
+    <button class="btn btn-primary" id="addLocationBtn" [disabled]="zipcode.invalid" (click)="addNewLocation()">Add location</button>
+  </form>
+</div>
